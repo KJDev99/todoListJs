@@ -6,11 +6,19 @@
 body {
   background: rgb(190, 190, 190);
 }
+.content {
+  width: 450px;
+  background: white;
+  margin: auto;
+  height: 90vh;
+  overflow: auto;
+  margin-top: 5vh;
+  border-radius: 5px;
+}
 .tasks {
   max-width: 450px;
   margin: auto;
   padding: 30px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -18,36 +26,49 @@ body {
 }
 .task {
   border: 1px solid #e7e7e7;
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 10px;
-  background: #fff;
-  border: 2px solid #fff;
 }
 .task.waiting {
-  border-color: yellow;
+  background: rgba(244, 164, 169, 1);
 }
 .task.done {
-  border-color: green;
+  background: rgba(159, 227, 232, 1);
 }
 
 .title {
-  font-size: 16px;
+  font-family: Roboto;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 10px;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: capitalize;
 }
 .title.center {
   text-align: center;
 }
 .text {
-  font-size: 12px;
-  margin-bottom: 10px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 8px;
 }
 .bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-family: Roboto;
+  font-size: 16px;
   font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: capitalize;
 }
 
 .bottom.center {
@@ -59,7 +80,7 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  bottom: 40px;
+  bottom: 60px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -88,6 +109,7 @@ body {
   border-radius: 15px;
   gap: 15px;
   transition: 0.5s linear all;
+  box-shadow: 0px 0px 10px 2px #00000083;
 }
 .task hr {
   margin: 5px 0;
@@ -103,18 +125,77 @@ button.remove {
   color: white;
 }
 .modal.open {
-  top: 50px;
+  top: 100px;
 }
-
+.modal .title {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.modal input,
+textarea,
+select {
+  border: 1px solid rgba(122, 122, 122, 1);
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 10px;
+  border-radius: 20px;
+}
+.bottom button {
+  height: 34px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 120px;
+  border: none;
+  border-radius: 17px;
+}
+.bottom button:nth-child(1) {
+  background: rgba(247, 33, 33, 0.864);
+}
+.bottom button:nth-child(2) {
+  background: rgba(126, 211, 105, 1);
+}
 .stat {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
-  width: 80%;
+  width: 200px;
   margin: 20px auto;
+  position: absolute;
+  background: white;
+  top: 5vh;
+  right: 5vh;
+  border-radius: 5px;
+  padding: 10px;
 }
 .stat h3 {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.content h2 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
   text-align: center;
+  margin-top: 30px;
 }
 
 .filter {
@@ -134,4 +215,29 @@ button.remove {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(195, 195, 195);
+  border-radius: 10px;
+}
+@media (max-width: 500px) {
+  .stat {
+    display: none;
+  }
+  .content {
+    width: 350px;
+  }
+  .tasks {
+    max-width: 350px;
+  }
 }

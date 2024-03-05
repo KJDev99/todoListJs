@@ -4,32 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="stat"></div>
-    <div class="filter">
+    <div class="content">
+      <h2>TODOLIST</h2>
+      <div class="stat"></div>
+      <div class="filter">
         <button onclick="filterTasks('all')">Barchasi</button>
         <button onclick="filterTasks('1')">Bajarilganlar</button>
         <button onclick="filterTasks('0')">Bajarilmaganlar</button>
-    </div>
-    <div class="tasks"></div>
-    <button class="add" onclick="toggle()">+</button>
+      </div>
+      <div class="tasks"></div>
+      <button class="add" onclick="toggle()">+</button>
 
-    <div class="modal">
-      <div class="title center">Yangi Task Qo'shish</div>
-      <input type="text" name="title" placeholder="Topshiriq Sarlavhasi" />
-      <textarea name="text" cols="30" rows="10"></textarea>
-      <input type="date" name="dedline" />
-      <select name="type">
-        <option value="shaxsiy">shaxsiy</option>
-        <option value="ish">ish</option>
-        <option value="uy">uy</option>
-        <option value="boshqa">boshqa</option>
-      </select>
-      <div class="bottom center">
-        <button onclick="toggle()">Bekor qilish</button>
-        <button onclick="add()">Kiritish</button>
+      <div class="modal">
+        <div class="title center">Yangi Task Qo'shish</div>
+        <input type="text" name="title" placeholder="Topshiriq Sarlavhasi" />
+        <textarea
+          name="text"
+          cols="30"
+          rows="10"
+          placeholder="Topshiriq matni"
+        ></textarea>
+        <input type="date" name="dedline" />
+        <select name="type">
+          <option value="shaxsiy">shaxsiy</option>
+          <option value="ish">ish</option>
+          <option value="uy">uy</option>
+          <option value="boshqa">boshqa</option>
+        </select>
+        <div class="bottom center">
+          <button onclick="toggle()">Bekor qilish</button>
+          <button onclick="add()">Kiritish</button>
+        </div>
       </div>
     </div>
 

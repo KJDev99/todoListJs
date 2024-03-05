@@ -74,6 +74,7 @@ const deleteTask = (index) => {
 
 const filterTasks = (status) => {
   render(
+    
     status == "all" ? tasks : [...tasks.filter((task) => task.status == status)]
   );
 };
